@@ -1,0 +1,8 @@
+include ../logo/logo
+include ../contacts/contacts
+
+mixin header()
+	+b.HEADER.page-header&attributes(attributes)
+		+e.inner
+			+logo._header
+			+contacts._header
