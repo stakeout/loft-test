@@ -4,6 +4,10 @@ import spritesmith from 'gulp.spritesmith-multi';
 import checkIconsInDir from 'spritesmith-dir-checker';
 import merge from 'merge-stream';
 import path from 'path';
+import svgstore from 'gulp-svgstore';
+import svgmin from 'gulp-svgmin';
+import replace from 'gulp-replace';
+import cheerio from 'gulp-cheerio';
 import errorHandler from 'gulp-plumber-error-handler';
 
 const cwd = path.join(__dirname, '..');
@@ -34,10 +38,28 @@ gulp.task('sprites', () => {
 
 				return options;
 			}
-		}));
+
+		}))
 
 	const imgStream = spriteData.img.pipe(gulp.dest('dist/assets/images/sprites'));
 	const styleStream = spriteData.css.pipe(gulp.dest('app/styles/sprites'));
 
 	return merge(imgStream, styleStream);
+});
+gulp.task('svgfill', function () {
+    return gulp.src('app/icons/*.svg')
+        .pipe(svgmin({
+			js2svg: {
+				pretty: true
+			}
+		}))
+		.pipe(svgstore())
+        .pipe(cheerio({
+            run: function ($) {
+                $('[fill^=#]').removeAttr('fill');
+            },
+            parserOptions: { xmlMode: true }
+        }))
+        .pipe(replace('&gt;', '>'))
+        .pipe(gulp.dest('dist/assets/images'));
 });
