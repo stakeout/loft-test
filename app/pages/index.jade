@@ -1,10 +1,12 @@
 extends /blocks/layout-default/layout-default
 include /blocks/header/header
 include /blocks/footer/footer
+include /blocks/content/index/main
 
 block head
-	- var pageTitle = 'CSSSR Project Template';
+	- var pageTitle = 'Loftschool test project';
 
 block content
 	+header
+	+main
 	+footer
