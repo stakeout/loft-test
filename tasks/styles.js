@@ -46,7 +46,7 @@ gulp.task('styles:lint', () => (
     gulp.src(['app/**/*.styl', '!app/styles/**'])
     .pipe(stylint({
         reporter: 'stylint-stylish',
-        reporterOptions: { verbose: true }
+        reporterOptions: { verbose: false }
     }))
     .pipe(stylint.reporter())
 ));

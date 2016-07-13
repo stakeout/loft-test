@@ -27,7 +27,7 @@
 	"placeholders": false,
 	"prefixVarsWithDollar": true,
 	"quotePref": "single",
-	"semicolons": "always",
+	// "semicolons": "always",
 	"stackedProperties": "never",
 	// "trailingWhitespace": "never", // bug: throw error when there are spaces after rule before comment
 	"universal": "never",
