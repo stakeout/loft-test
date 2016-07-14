@@ -3,7 +3,7 @@ mixin loftblog-courses()
 		+e.inner.container
 			+e.HEADER.header
 				+e.H2.title Курсы на Loftblog
-				+e.P.subtitle которые мне помогут в выполнении задания
+				+e.P.subtitle которые мне помогут в выполнении этого задания
 			+e.course-wrapper
 				+b.SECTION.course._java-script
 					+e.img-wrap._java-script
@@ -11,16 +11,16 @@ mixin loftblog-courses()
 					+e.P.description Видеокурс о одном из самых популярных языков программирования -
 						| Javascript. Изучая этот курс вы познаете этот прекрасный язык от самых основ.
 					+e.SPAN.duration 24 урока (6 часов 46 минут)
-					+b.LABEL.input-box Посмотрел
-						+e.INPUT.checkbox._java-script(type='checkbox' name='java-script')
+					+b.INPUT.checkbox.checkbox__courses._java-script(type='checkbox' id='js' name='java-script')
+					+b.LABEL.input-box(for='js') Посмотрел
 				+b.SECTION.course._jquery
 					+e.img-wrap._jquery
-					+e.H3.title Основы JQuery
+					+e.H3.title Основы JQUERY
 					+e.P.description Видеокурс о одном из самых популярных языков программирования -
 						| Javascript. Изучая этот курс вы познаете этот прекрасный язык от самых основ.
-					+e.SPAN.duration 11 урокjd (2 часа 6 минут)
-					+b.LABEL.input-box Посмотрел
-						+e.INPUT.checkbox._jquery(type='checkbox' name='jquery')
+					+e.SPAN.duration 11 уроков (2 часа 6 минут)
+					+b.INPUT.checkbox.checkbox__courses._jquery(type='checkbox'  id='jq' name='jquery')
+					+b.LABEL.input-box(for='jq') Посмотрел
 				+b.SECTION.course._page-elems
 					+e.img-wrap._page-elems
 					+e.H3.title Базовые элементы страницы
@@ -28,26 +28,26 @@ mixin loftblog-courses()
 						| популярных элементов сайтов. Посмотрев этот курс вы научитесь создавать табы,
 						| аккордеон, слайдшоу, слайдер и т.д.
 					+e.SPAN.duration 9 уроков (2 часа 7 минут)
-					+b.LABEL.input-box Посмотрел
-						+e.INPUT.checkbox._page-elems(type='checkbox' name='page-elems')
+					+b.INPUT.checkbox.checkbox__courses._page-elems(type='checkbox' id='elems' name='page-elems')
+					+b.LABEL.input-box(for='elems') Посмотрел
 				+b.SECTION.course._adaptive
 					+e.img-wrap._adaptive
 					+e.H3.title Создание адаптивных сайтов
 					+e.P.description В этом курсе вы узнаете как создавать адаптивные сайты, что такое адаптивная верстка и дизайн.
 					+e.SPAN.duration 7 уроков (2 часа 11 минут)
-					+b.LABEL.input-box Посмотрел
-						+e.INPUT.checkbox._adaptive(type='checkbox' name='adaptive')
+					+b.INPUT.checkbox.checkbox__courses._adaptive(type='checkbox' id='adaptive' name='adaptive')
+					+b.LABEL.input-box(for='adaptive') Посмотрел
 				+b.SECTION.course._button-generator
 					+e.img-wrap._button-generator
-					+e.H3.title Генератор кнопок
+					+e.H3.title Генератор адаптивной css галереи
 					+e.P.description В этом видеокурсе вы изучите инструменты, техники и подходы для web-разработчика, которые помогут вам решать поставленные задачи более быстро и эффективно.
 					+e.SPAN.duration 6 уроков (1 час 9 минут)
-					+b.LABEL.input-box Посмотрел
-						+e.INPUT.checkbox._button-generator(type='checkbox' name='button-generator')
+					+b.INPUT.checkbox.checkbox__courses._button-generator(type='checkbox' id='btn' name='button-generator')
+					+b.LABEL.input-box(for='btn') Посмотрел
 				+b.SECTION.course._adaptive-gallery
 					+e.img-wrap._adaptive-gallery
 					+e.H3.title Верстка адаптивной css галереи
 					+e.P.description В этом курсе мы разберем как сверстать адаптивную css галерею. Также познакомимся с Flexbox.
 					+e.SPAN.duration 4 урока (50 минут)
-					+b.LABEL.input-box Посмотрел
-						+e.INPUT.checkbox._adaptive-gallery(type='checkbox' name='adaptive-gallery')
+					+b.INPUT.checkbox.checkbox__courses._adaptive-gallery(type='checkbox' id='gallery' name='adaptive-gallery')
+					+b.LABEL.input-box(for='gallery') Посмотрел
