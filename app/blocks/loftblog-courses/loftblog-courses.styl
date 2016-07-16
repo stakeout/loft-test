@@ -4,8 +4,6 @@
 	&__inner
 		display: block
 		position: relative
-		&_visibility
-			visibility: visible
 	&__all-checked-toggle
 		position: absolute
 		top: 50%
@@ -17,8 +15,7 @@
 		font-weight: 500
 		line-height 28px
 		transform: translateY(-50%) translateX(-50%)
-		&_visibility
-			visibility: visible
+		visibility: hidden;
 		&:before
 			position: absolute
 			left: 5px
@@ -63,6 +60,7 @@
 		margin-right: 0
 	&:hover > &__img-wrap
 		border-bottom:5px solid #8cc34b
+		transition: border .2s
 	&__img-wrap
 		max-height: 170px
 		margin-left: -20px
