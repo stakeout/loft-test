@@ -1,6 +1,35 @@
 .loftblog-courses
+	padding-top: 145px
+	background: url(/assets/images/gplaypattern.png)
+	&__inner
+		display: block
+		position: relative
+		&_visibility
+			visibility: visible
+	&__all-checked-toggle
+		position: absolute
+		top: 50%
+		left: 50%
+		padding-left: 60px
+		color #8cc34b
+		font-family: $base-font
+		font-size: 42px
+		font-weight: 500
+		line-height 28px
+		transform: translateY(-50%) translateX(-50%)
+		&_visibility
+			visibility: visible
+		&:before
+			position: absolute
+			left: 5px
+			top: calc(50% - 20px)
+			content: ''
+			width: 10px
+			height: 20px
+			border-right: 5px solid #8cc34b
+			border-bottom: 5px solid #8cc34b
+			transform: rotate(45deg)
 	&__header
-		margin-top: 157px
 		margin-bottom: 40px
 		text-align: center
 	&__title
@@ -28,9 +57,12 @@
 	margin-bottom: 23px
 	padding: 0 20px
 	border-radius: 2px
+	background-color: #fff
 	box-shadow 0 1px 5px rgba(0, 0, 0, 0.2)
 	&:nth-child(3n)
 		margin-right: 0
+	&:hover > &__img-wrap
+		border-bottom:5px solid #8cc34b
 	&__img-wrap
 		max-height: 170px
 		margin-left: -20px
@@ -72,7 +104,12 @@
 		font-size 14px
 		font-weight: 300
 		line-height 21px
-s
+		&:before
+			position: absolute
+			content: ''
+			top: calc(50% - 8px)
+			left: 0
+			sprite $clock
 
 
 .input-box
