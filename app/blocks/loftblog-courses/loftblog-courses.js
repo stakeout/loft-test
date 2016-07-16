@@ -20,7 +20,7 @@ export default function (){
 					ready.style.visibility = 'visible';
 					coursesVisible.style.visibility = 'hidden';
 				}
-			} else{
+			}else {
 				counter--;
 				target.parentNode.style.backgroundColor = '#fff';
 				target.nextSibling.nextSibling.style.backgroundColor = '#f6f7f2';

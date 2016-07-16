@@ -3,7 +3,7 @@ import $ from 'jquery';
 import allCoursesChecked from '../blocks/loftblog-courses/loftblog-courses';
 
 $(() => {
-svg4everybody();
-allCoursesChecked();
+	svg4everybody();
+	allCoursesChecked();
 });
 
