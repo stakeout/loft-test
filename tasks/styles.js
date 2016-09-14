@@ -16,38 +16,46 @@ import errorHandler from 'gulp-plumber-error-handler';
 const isDebug = process.env.NODE_ENV !== 'production';
 
 gulp.task('styles', () => (
-    gulp.src('app/styles/*.styl')
-    .pipe(plumber({ errorHandler: errorHandler(`Error in \'styles\' task`) }))
-    .pipe(gulpIf(isDebug, sourcemaps.init()))
-    .pipe(stylus({
-        use: [
-            importIfExist(),
-            rupture(),
-            autoprefixer()
-        ],
-        'include css': true
-    })) 
-    // .pipe(postcss([sharps({
-    // 	columns: 12,
-    // 	maxWidth: '1200px',
-    // 	gutter: '5px',
-    // 	flex: 'flex'
-    // })]).process('a {color: red}').then(function(result) {
-    // 	console.log(result.css);
-    // }))
-    .pipe(gulpIf(!isDebug, gcmq()))
-    .pipe(gulpIf(!isDebug, nano({ zindex: false })))
-    .pipe(gulp.dest('dist/assets/styles'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulpIf(isDebug, sourcemaps.write()))
-    .pipe(gulp.dest('dist/assets/styles'))
+	gulp.src('app/styles/*.styl')
+	.pipe(plumber({
+		errorHandler: errorHandler('Error in \'styles\' task')
+	}))
+	.pipe(gulpIf(isDebug, sourcemaps.init()))
+	.pipe(stylus({
+		use: [
+			importIfExist(),
+			rupture(),
+			autoprefixer()
+		],
+		'include css': true
+	}))
+	// .pipe(postcss([sharps({
+	// 	columns: 12,
+	// 	maxWidth: '1200px',
+	// 	gutter: '5px',
+	// 	flex: 'flex'
+	// })]).process('a {color: red}').then(function(result) {
+	// 	console.log(result.css);
+	// }))
+	.pipe(gulpIf(!isDebug, gcmq()))
+	.pipe(gulpIf(!isDebug, nano({
+		zindex: false
+	})))
+	.pipe(gulp.dest('dist/assets/styles'))
+	.pipe(rename({
+		suffix: '.min'
+	}))
+	.pipe(gulpIf(isDebug, sourcemaps.write()))
+	.pipe(gulp.dest('dist/assets/styles'))
 ));
 
 gulp.task('styles:lint', () => (
-    gulp.src(['app/**/*.styl', '!app/styles/**'])
-    .pipe(stylint({
-        reporter: 'stylint-stylish',
-        reporterOptions: { verbose: false }
-    }))
-    .pipe(stylint.reporter())
+	gulp.src(['app/**/*.styl', '!app/styles/**'])
+	.pipe(stylint({
+		reporter: 'stylint-stylish',
+		reporterOptions: {
+			verbose: false
+		}
+	}))
+	// .pipe(stylint.reporter())
 ));
